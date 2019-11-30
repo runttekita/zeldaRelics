@@ -56,8 +56,9 @@ class MasterSwordPower(val target: AbstractCreature) : AbstractPower(), Helper {
     }
 
     override fun onCardDraw(card: AbstractCard) {
-        if (card.type == CardType.ATTACK) {
+        if (card.type == CardType.ATTACK && !card.isSword) {
             card.setCostForTurn(-1)
+            card.isSword = true
         }
     }
 

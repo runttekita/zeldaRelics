@@ -14,5 +14,13 @@
       " #yStrength."
     ],
     "FLAVOR": "Fashionable and Fierce, this tunic stores great power."
+  },
+  "zeldaRelics:BlueTunic": {
+    "NAME": "Blue Tunic",
+    "DESCRIPTIONS": [
+      "Start each combat with #b",
+      " #yDexterity."
+    ],
+    "FLAVOR": "Fashionable and Sturdy, this tunic can take many hits."
   }
 }

@@ -9,8 +9,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.localization.PowerStrings
 import com.megacrit.cardcrawl.localization.RelicStrings
-import zeldaRelics.relics.GreenHat
-import zeldaRelics.relics.RedTunic
+import zeldaRelics.relics.*
 
 @SpireInitializer
 class ZeldaRelics :
@@ -28,6 +27,7 @@ class ZeldaRelics :
     override fun receiveEditRelics() {
         BaseMod.addRelic(GreenHat(), RelicType.SHARED)
         BaseMod.addRelic(RedTunic(), RelicType.SHARED)
+        BaseMod.addRelic(BlueTunic(), RelicType.SHARED)
     }
 
     companion object {

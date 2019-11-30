@@ -5,6 +5,7 @@ import basemod.BaseMod.subscribe
 import basemod.helpers.RelicType
 import basemod.interfaces.EditRelicsSubscriber
 import basemod.interfaces.EditStringsSubscriber
+import basemod.interfaces.OnPlayerLoseBlockSubscriber
 import basemod.interfaces.PostUpdateSubscriber
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer
 import com.megacrit.cardcrawl.core.Settings
@@ -17,8 +18,16 @@ import zeldaRelics.relics.*
 class ZeldaRelics :
     EditStringsSubscriber,
     EditRelicsSubscriber,
-    PostUpdateSubscriber
+    PostUpdateSubscriber,
+    OnPlayerLoseBlockSubscriber
 {
+    override fun receiveOnPlayerLoseBlock(block: Int): Int {
+        if (AbstractDungeon.player.hasRelic(HylianShield.id)) {
+            return 0
+        }
+        return block
+    }
+
     override fun receivePostUpdate() {
         if (AbstractDungeon.player == null) return
         AbstractDungeon.player.getRelic(CouragePiece.id)?.onTrigger()

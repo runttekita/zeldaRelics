@@ -26,22 +26,4 @@ class HylianShield : AbstractZeldaRelic(id, rarity, landingSound) {
         return DESCRIPTIONS[0]
     }
 
-    @SpirePatch(
-        clz = GameActionManager::class,
-        method = "getNextAction"
-    )
-    object HylianShieldPatch {
-        @JvmStatic
-        fun Instrument() : ExprEditor {
-            return object : ExprEditor() {
-                @Throws(CannotCompileException::class)
-                override fun edit(m: MethodCall?) {
-                    if (m!!.className == AbstractCreature::class.java.name && m.methodName == "hasPower") {
-                        m.replace("\$_ = \$proceed($$) || !" + AbstractDungeon::class.java.name + ".player.hasRelic(\"zeldaRelics:HylianShield\") " + ";")
-                    }
-                }
-            }
-        }
-    }
-
 }

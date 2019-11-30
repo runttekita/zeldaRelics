@@ -5,8 +5,10 @@ import basemod.BaseMod.subscribe
 import basemod.helpers.RelicType
 import basemod.interfaces.EditRelicsSubscriber
 import basemod.interfaces.EditStringsSubscriber
+import basemod.interfaces.PostUpdateSubscriber
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer
 import com.megacrit.cardcrawl.core.Settings
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.localization.PowerStrings
 import com.megacrit.cardcrawl.localization.RelicStrings
 import zeldaRelics.relics.*
@@ -14,8 +16,14 @@ import zeldaRelics.relics.*
 @SpireInitializer
 class ZeldaRelics :
     EditStringsSubscriber,
-    EditRelicsSubscriber
+    EditRelicsSubscriber,
+    PostUpdateSubscriber
 {
+    override fun receivePostUpdate() {
+        if (AbstractDungeon.player == null) return
+        AbstractDungeon.player.getRelic(CouragePiece.id)?.onTrigger()
+    }
+
     override fun receiveEditStrings() {
         val lang = when (Settings.language) {
             else -> "eng"
@@ -36,6 +44,7 @@ class ZeldaRelics :
         BaseMod.addRelic(PowerTriforce(), RelicType.SHARED)
         BaseMod.addRelic(Navi(), RelicType.SHARED)
         BaseMod.addRelic(HeroBow(), RelicType.SHARED)
+        BaseMod.addRelic(CouragePiece(), RelicType.SHARED)
     }
 
     companion object {

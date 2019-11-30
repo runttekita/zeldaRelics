@@ -83,5 +83,12 @@
       "Your #yArrows deal #b",
       " more damage."
     ]
+  },
+  "zeldaRelics:CouragePiece": {
+    "NAME": "Courage Piece",
+    "DESCRIPTIONS": [
+      "Power emanates from this but you need to gather all the pieces."
+    ],
+    "FLAVOR": "A piece of something greater. All your instincts tell you to gather them all."
   }
 }

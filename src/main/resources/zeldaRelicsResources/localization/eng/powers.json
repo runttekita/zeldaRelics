@@ -1,3 +1,9 @@
 {
-
+  "zeldaRelics:MasterSwordPower": {
+    "NAME": "Master Sword",
+    "DESCRIPTIONS": [
+      "All #yAttacks cost #b",
+      " less to play."
+    ]
+  }
 }

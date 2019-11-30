@@ -78,7 +78,8 @@ class ZeldaRelics :
 
     init {
         subscribe(this)
-        setModID("Cirno")
+        setModID("zeldaRelics")
+        println("dab")
     }
 
 }

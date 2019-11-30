@@ -45,5 +45,12 @@
       "20 Max HP. NL Attacks cost #b",
       " less to play."
     ]
+  },
+  "zeldaRelics:WisdomTriforce": {
+    "NAME": "Triforce of Wisdom",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn."
+    ],
+    "FLAVOR": "With Wisdom all things are possible."
   }
 }

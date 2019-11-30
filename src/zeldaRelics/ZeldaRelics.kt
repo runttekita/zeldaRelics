@@ -29,6 +29,9 @@ class ZeldaRelics :
         BaseMod.addRelic(RedTunic(), RelicType.SHARED)
         BaseMod.addRelic(BlueTunic(), RelicType.SHARED)
         BaseMod.addRelic(Boomerang(), RelicType.SHARED)
+        BaseMod.addRelic(HylianShield(), RelicType.SHARED)
+        BaseMod.addRelic(MasterSword(), RelicType.SHARED)
+        BaseMod.addRelic(WisdomTriforce(), RelicType.SHARED)
     }
 
     companion object {

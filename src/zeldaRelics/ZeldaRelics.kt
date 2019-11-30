@@ -33,6 +33,7 @@ class ZeldaRelics :
         BaseMod.addRelic(MasterSword(), RelicType.SHARED)
         BaseMod.addRelic(WisdomTriforce(), RelicType.SHARED)
         BaseMod.addRelic(CourageTriforce(), RelicType.SHARED)
+        BaseMod.addRelic(PowerTriforce(), RelicType.SHARED)
     }
 
     companion object {

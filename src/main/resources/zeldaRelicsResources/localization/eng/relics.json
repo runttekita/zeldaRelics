@@ -60,5 +60,12 @@
       " #yArtifact."
     ],
     "FLAVOR": "With Wisdom all things are possible."
+  },
+  "zeldaRelics:PowerTriforce": {
+    "NAME": "Triforce of Power",
+    "DESCRIPTIONS": [
+      "Start each combat with #b",
+      " #yStrength and #yDexterity."
+    ]
   }
 }

@@ -20,7 +20,7 @@ class GreenHat : AbstractZeldaRelic(id, rarity, landingSound) {
 
     override fun onEnterRoom(room: AbstractRoom?) {
         flash()
-        player.gainGold(healthGain)
+        player.increaseMaxHp(healthGain, true)
     }
 
 }

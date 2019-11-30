@@ -45,30 +45,6 @@ class ZeldaRelics :
             modID = ID
         }
 
-        fun makeCardPath(resourcePath: String): String {
-            return "cirno" + "/images/cards/" + resourcePath
-        }
-
-        fun makeRelicPath(resourcePath: String): String {
-            return getModID() + "/images/relics/" + resourcePath
-        }
-
-        fun makeRelicOutlinePath(resourcePath: String): String {
-            return getModID() + "/images/relics/outline/" + resourcePath
-        }
-
-        fun makeOrbPath(resourcePath: String): String {
-            return getModID() + "/orbs/" + resourcePath
-        }
-
-        fun makePowerPath(resourcePath: String): String {
-            return getModID() + "/images/powers/" + resourcePath
-        }
-
-        fun makeEventPath(resourcePath: String): String {
-            return getModID() + "/images/events/" + resourcePath
-        }
-
         @JvmStatic
         fun initialize() {
             ZeldaRelics()

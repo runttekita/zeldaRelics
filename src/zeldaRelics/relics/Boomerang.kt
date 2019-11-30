@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.relics.AbstractRelic
+import com.megacrit.cardcrawl.vfx.GainPennyEffect
 import zeldaRelics.ZeldaRelics
 
 class Boomerang : AbstractZeldaRelic(id, rarity, landingSound) {
@@ -28,6 +29,18 @@ class Boomerang : AbstractZeldaRelic(id, rarity, landingSound) {
             flash()
             addToBot(RelicAboveCreatureAction(m, this))
             player.gainGold(goldGain)
+            for (i in 0 until goldGain) {
+                AbstractDungeon.effectList.add(
+                    GainPennyEffect(
+                        player,
+                        m.hb.cX,
+                        m.hb.cY,
+                        m.hb.cX,
+                        m.hb.cY,
+                        true
+                    )
+                )
+            }
             if (AbstractDungeon.relicRng.random(99) < surpriseChance) {
                 addToBot(ObtainPotionAction(AbstractDungeon.returnRandomPotion(true)))
             }

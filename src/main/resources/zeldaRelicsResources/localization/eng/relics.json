@@ -27,14 +27,14 @@
     "NAME": "Boomerang",
     "DESCRIPTIONS": [
       "Whenever an enemy dies, gain #b",
-      " gold and maybe get a #ySurprise!"
+      " gold and maybe a #ySurprise!"
     ],
     "FLAVOR": "Always come back, always picks something up."
   },
   "zeldaRelics:HylianShield": {
     "NAME": "Hylian Shield",
     "DESCRIPTIONS": [
-      "No longer lose #yBlock at the start of your turn."
+      "Block is no longer removed at the start of your turn."
     ],
     "FLAVOR":"A shield blessed by the gods. It will never falter."
   },

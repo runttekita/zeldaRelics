@@ -5,6 +5,7 @@ import basemod.BaseMod.subscribe
 import basemod.interfaces.EditRelicsSubscriber
 import basemod.interfaces.EditStringsSubscriber
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer
+import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.localization.PowerStrings
 import com.megacrit.cardcrawl.localization.RelicStrings
 
@@ -14,8 +15,11 @@ class ZeldaRelics :
     EditRelicsSubscriber
 {
     override fun receiveEditStrings() {
-            BaseMod.loadCustomStringsFile(PowerStrings::class.java, "zeldaRelics/localization/eng/prodStrings/powers.json")
-            BaseMod.loadCustomStringsFile(RelicStrings::class.java, "zeldaRelics/localization/eng/prodStrings/relics.json")
+        val lang = when (Settings.language) {
+            else -> "eng"
+        }
+        BaseMod.loadCustomStringsFile(PowerStrings::class.java, "zeldaRelics/localization/$lang/powers.json")
+        BaseMod.loadCustomStringsFile(RelicStrings::class.java, "zeldaRelics/localization/$lang/relics.json")
     }
 
     override fun receiveEditRelics() {

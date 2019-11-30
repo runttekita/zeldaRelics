@@ -22,5 +22,12 @@
       " #yDexterity."
     ],
     "FLAVOR": "Fashionable and Sturdy, this tunic can take many hits."
+  },
+  "zeldaRelics:Boomerang": {
+    "NAME": "Boomerang",
+    "DESCRIPTIONS": [
+      "Whenever an enemy dies, gain #b",
+      " gold and maybe get a #ySurprise!"
+    ]
   }
 }

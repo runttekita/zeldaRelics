@@ -28,6 +28,7 @@ class ZeldaRelics :
         BaseMod.addRelic(GreenHat(), RelicType.SHARED)
         BaseMod.addRelic(RedTunic(), RelicType.SHARED)
         BaseMod.addRelic(BlueTunic(), RelicType.SHARED)
+        BaseMod.addRelic(Boomerang(), RelicType.SHARED)
     }
 
     companion object {

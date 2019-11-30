@@ -84,7 +84,7 @@
                         </goals>
                         <configuration>
                             <sources>
-                                <source>src/main/kotlin</source>
+                                <source>src</source>
                             </sources>
                         </configuration>
                     </execution>

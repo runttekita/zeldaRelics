@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.localization.PowerStrings
 import com.megacrit.cardcrawl.localization.RelicStrings
 import zeldaRelics.relics.GreenHat
+import zeldaRelics.relics.RedTunic
 
 @SpireInitializer
 class ZeldaRelics :
@@ -26,6 +27,7 @@ class ZeldaRelics :
 
     override fun receiveEditRelics() {
         BaseMod.addRelic(GreenHat(), RelicType.SHARED)
+        BaseMod.addRelic(RedTunic(), RelicType.SHARED)
     }
 
     companion object {
@@ -58,7 +60,6 @@ class ZeldaRelics :
     init {
         subscribe(this)
         setModID("zeldaRelics")
-        println("dab")
     }
 
 }

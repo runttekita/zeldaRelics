@@ -6,5 +6,13 @@
       " HP."
     ],
     "FLAVOR": "A hat that has been with you through everything, simply wearing it makes you stronger."
+  },
+  "zeldaRelics:RedTunic": {
+    "NAME": "Red Tunic",
+    "DESCRIPTIONS": [
+      "Start each combat with #b",
+      " #yStrength."
+    ],
+    "FLAVOR": "Fashionable and Fierce, this tunic stores great power."
   }
 }

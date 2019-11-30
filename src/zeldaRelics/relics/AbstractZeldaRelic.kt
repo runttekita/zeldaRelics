@@ -10,8 +10,7 @@ import zeldaRelics.ZeldaRelics
 import zeldaRelics.ZeldaRelics.Companion.textureLoader
 import zeldaRelics.helpers.Helper
 
-open class AbstractZeldaRelic(id: String, tier: AbstractRelic.RelicTier, sfx: AbstractRelic.LandingSound) : CustomRelic(id, getTexture(id), tier, sfx),
-    Helper {
+open class AbstractZeldaRelic(id: String, tier: AbstractRelic.RelicTier, sfx: AbstractRelic.LandingSound) : CustomRelic(id, getTexture(id), tier, sfx), Helper {
 
 }
 

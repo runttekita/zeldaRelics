@@ -59,20 +59,29 @@
       "Start each combat with #b",
       " #yArtifact."
     ],
-    "FLAVOR": "With Wisdom all things are possible."
+    "FLAVOR": "A piece of something greater. All your instincts tell you to gather them all."
   },
   "zeldaRelics:PowerTriforce": {
     "NAME": "Triforce of Power",
     "DESCRIPTIONS": [
       "Start each combat with #b",
       " #yStrength and #yDexterity."
-    ]
+    ],
+    "FLAVOR": "Power is the last thing you need, but you still need it."
   },
   "zeldaRelics:Navi": {
     "NAME": "Navi",
     "DESCRIPTIONS": [
       "At the start of combat, add a random card to your hand. It costs #b",
       " less this combat."
+    ],
+    "FLAVOR": "A friend from ages past comes to lend a hand."
+  },
+  "zeldaRelics:HeroBow": {
+    "NAME": "Hero Bow",
+    "DESCRIPTIONS": [
+      "Your #yArrows deal #b",
+      " more damage."
     ]
   }
 }

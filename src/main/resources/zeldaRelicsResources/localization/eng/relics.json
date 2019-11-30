@@ -67,5 +67,12 @@
       "Start each combat with #b",
       " #yStrength and #yDexterity."
     ]
+  },
+  "zeldaRelics:Navi": {
+    "NAME": "Navi",
+    "DESCRIPTIONS": [
+      "At the start of combat, add a random card to your hand. It costs #b",
+      " less this combat."
+    ]
   }
 }

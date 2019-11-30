@@ -31,9 +31,9 @@ class MasterSwordPower(val target: AbstractCreature) : AbstractPower(), Helper {
         public fun reduceAttackCost() {
             loopOverAllPiles { list ->
                 list.forEach {
-                    if (it.type == CardType.ATTACK && !it.isCostModified && it.cost > 0) {
+                    if (it.type == CardType.ATTACK && !it.isSword && it.cost > 0) {
                         it.modifyCostForCombat(-1)
-                        it.isCostModified = true
+                        it.isSword = true
                     }
                 }
             }
@@ -81,9 +81,9 @@ class MasterSwordPower(val target: AbstractCreature) : AbstractPower(), Helper {
         fun Insert(__instance: AbstractPlayer) {
             if (!player.hasPower(MasterSwordPower.POWER_ID)) return
             for (card in player.hand.group) {
-                if (card.type == CardType.ATTACK && !card.isCostModified && card.cost > 0) {
+                if (card.type == CardType.ATTACK && !card.isSword && card.cost > 0) {
                     card.modifyCostForCombat(-1)
-                    card.isCostModified = true
+                    card.isSword = true
                 }
             }
         }
@@ -110,9 +110,9 @@ class MasterSwordPower(val target: AbstractCreature) : AbstractPower(), Helper {
         @JvmStatic
         fun Postfix(__instance: ShowCardAndAddToHandEffect, card: AbstractCard, useless: Float, uselessTwo: Float) {
             if (!player.hasPower(MasterSwordPower.POWER_ID)) return
-            if (card.type == CardType.ATTACK && !card.isCostModified && card.cost > 0) {
+            if (card.type == CardType.ATTACK && !card.isSword && card.cost > 0) {
                 card.modifyCostForCombat(-1)
-                card.isCostModified = true
+                card.isSword = true
             }
         }
     }
@@ -128,10 +128,24 @@ class MasterSwordPower(val target: AbstractCreature) : AbstractPower(), Helper {
         @JvmStatic
         fun Postfix(__instance: ShowCardAndAddToHandEffect, card: AbstractCard) {
             if (!player.hasPower(MasterSwordPower.POWER_ID)) return
-            if (card.type == CardType.ATTACK && !card.isCostModified && card.cost > 0) {
+            if (card.type == CardType.ATTACK && !card.isSword && card.cost > 0) {
                 card.modifyCostForCombat(-1)
-                card.isCostModified = true
+                card.isSword = true
             }
         }
     }
+
+    @SpirePatch(
+        clz = AbstractCard::class,
+        method = SpirePatch.CLASS
+    )
+    object Sworded : Helper {
+        @JvmStatic
+        public var isSword = SpireField<Boolean>{false}
+    }
+
 }
+
+var AbstractCard.isSword: Boolean
+    get() = MasterSwordPower.Sworded.isSword.get(this)
+    set(value) = MasterSwordPower.Sworded.isSword.set(this, value)

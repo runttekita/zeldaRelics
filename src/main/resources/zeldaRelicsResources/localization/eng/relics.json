@@ -37,5 +37,13 @@
       "No longer lose #yBlock at the start of your turn."
     ],
     "FLAVOR":"A shield blessed by the gods. It will never falter."
+  },
+  "zeldaRelics:MasterSword": {
+    "NAME": "Master Sword",
+    "DESCRIPTIONS": [
+      "Upon picking up this relic, lose #r",
+      "20 Max HP. NL Attacks cost #b",
+      " less to play."
+    ]
   }
 }

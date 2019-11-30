@@ -42,7 +42,7 @@
     "NAME": "Master Sword",
     "DESCRIPTIONS": [
       "Upon picking up this relic, lose #r",
-      "20 Max HP. NL Attacks cost #b",
+      " Max HP. NL Attacks cost #b",
       " less to play."
     ]
   },

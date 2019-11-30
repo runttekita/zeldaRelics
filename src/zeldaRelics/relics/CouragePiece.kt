@@ -29,6 +29,10 @@ class CouragePiece : AbstractZeldaRelic(id, rarity, landingSound) {
         return DESCRIPTIONS[0]
     }
 
+    override fun onEquip() {
+        setCounter(1)
+    }
+
     override fun instantObtain() {
         if (AbstractDungeon.player.hasRelic(CouragePiece.id)) {
             val CouragePiece = AbstractDungeon.player.getRelic(CouragePiece.id) as CouragePiece

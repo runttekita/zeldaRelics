@@ -139,8 +139,8 @@ class MasterSwordPower(val target: AbstractCreature) : AbstractPower(), Helper {
         clz = AbstractCard::class,
         method = SpirePatch.CLASS
     )
-    object Sworded : Helper {
-        @JvmStatic
+    public object Sworded : Helper {
+        @JvmField
         public var isSword = SpireField<Boolean>{false}
     }
 

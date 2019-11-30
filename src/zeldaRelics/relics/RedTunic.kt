@@ -11,7 +11,7 @@ class RedTunic : AbstractZeldaRelic(id, rarity, landingSound) {
 
     companion object {
         public val id = ZeldaRelics.makeID(RedTunic::class.java)
-        private val rarity = AbstractRelic.RelicTier.UNCOMMON
+        private val rarity = AbstractRelic.RelicTier.SPECIAL
         private val landingSound = LandingSound.FLAT
         private const val strengthGain = 2
     }

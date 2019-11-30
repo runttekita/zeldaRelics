@@ -52,5 +52,13 @@
       "Gain [E] at the start of your turn."
     ],
     "FLAVOR": "With Wisdom all things are possible."
+  },
+  "zeldaRelics:CourageTriforce": {
+    "NAME": "Triforce of Courage",
+    "DESCRIPTIONS": [
+      "Start each combat with #b",
+      " #yArtifact."
+    ],
+    "FLAVOR": "With Wisdom all things are possible."
   }
 }

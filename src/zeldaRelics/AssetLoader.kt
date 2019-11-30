@@ -18,7 +18,7 @@ class AssetLoader {
             try {
                 assets.finishLoadingAsset(fileName)
             } catch (e: GdxRuntimeException) {
-                return getTexture("zeldaRelics/images/ui/missing_texture.png")
+                return getTexture("zeldaRelicsResources/images/ui/missing_texture.png")
             }
 
         }

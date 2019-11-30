@@ -28,8 +28,8 @@ class ZeldaRelics :
         val lang = when (Settings.language) {
             else -> "eng"
         }
-        BaseMod.loadCustomStringsFile(PowerStrings::class.java, "zeldaRelics/localization/$lang/powers.json")
-        BaseMod.loadCustomStringsFile(RelicStrings::class.java, "zeldaRelics/localization/$lang/relics.json")
+        BaseMod.loadCustomStringsFile(PowerStrings::class.java, "zeldaRelicsResources/localization/$lang/powers.json")
+        BaseMod.loadCustomStringsFile(RelicStrings::class.java, "zeldaRelicsResources/localization/$lang/relics.json")
     }
 
     override fun receiveEditRelics() {

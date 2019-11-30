@@ -20,19 +20,19 @@ import javazoom.jl.decoder.LayerIIIDecoder.io
 import zeldaRelics.helpers.Helper
 
 class MasterSwordPower(val target: AbstractCreature) : AbstractPower(), Helper {
-    val POWER_ID = makeID(MasterSwordPower::class.java)
     private val powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID)
     val NAME = powerStrings.NAME
     val DESCRIPTIONS = powerStrings.DESCRIPTIONS
 
     companion object : Helper {
+        public val POWER_ID = makeID(MasterSwordPower::class.java)
         private const val costReduction = 1
 
         public fun reduceAttackCost() {
             loopOverAllPiles { list ->
                 list.forEach {
                     if (it.type == CardType.ATTACK && !it.isCostModified && it.cost > 0) {
-                        it.modifyCostForCombat(it.cost - 1)
+                        it.modifyCostForCombat(-1)
                         it.isCostModified = true
                     }
                 }
@@ -57,7 +57,7 @@ class MasterSwordPower(val target: AbstractCreature) : AbstractPower(), Helper {
 
     override fun onCardDraw(card: AbstractCard) {
         if (card.type == CardType.ATTACK) {
-            card.setCostForTurn(card.cost - 1)
+            card.setCostForTurn(-1)
         }
     }
 
@@ -79,9 +79,10 @@ class MasterSwordPower(val target: AbstractCreature) : AbstractPower(), Helper {
             locator = Locator::class
         )
         fun Insert(__instance: AbstractPlayer) {
+            if (!player.hasPower(MasterSwordPower.POWER_ID)) return
             for (card in player.hand.group) {
                 if (card.type == CardType.ATTACK && !card.isCostModified && card.cost > 0) {
-                    card.modifyCostForCombat(card.cost - 1)
+                    card.modifyCostForCombat(-1)
                     card.isCostModified = true
                 }
             }
@@ -105,11 +106,12 @@ class MasterSwordPower(val target: AbstractCreature) : AbstractPower(), Helper {
             Float::class
         ]
     )
-    object AddToHandPatch {
+    object AddToHandPatch : Helper {
         @JvmStatic
         fun Postfix(__instance: ShowCardAndAddToHandEffect, card: AbstractCard, useless: Float, uselessTwo: Float) {
+            if (!player.hasPower(MasterSwordPower.POWER_ID)) return
             if (card.type == CardType.ATTACK && !card.isCostModified && card.cost > 0) {
-                card.modifyCostForCombat(card.cost - 1)
+                card.modifyCostForCombat(-1)
                 card.isCostModified = true
             }
         }
@@ -122,11 +124,12 @@ class MasterSwordPower(val target: AbstractCreature) : AbstractPower(), Helper {
             AbstractCard::class
         ]
     )
-    object Same {
+    object Same : Helper {
         @JvmStatic
         fun Postfix(__instance: ShowCardAndAddToHandEffect, card: AbstractCard) {
+            if (!AddToHandPatch.player.hasPower(MasterSwordPower.POWER_ID)) return
             if (card.type == CardType.ATTACK && !card.isCostModified && card.cost > 0) {
-                card.modifyCostForCombat(card.cost - 1)
+                card.modifyCostForCombat(-1)
                 card.isCostModified = true
             }
         }

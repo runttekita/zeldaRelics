@@ -1,10 +1,25 @@
 package zeldaRelics
 
+import basemod.BaseMod
 import basemod.BaseMod.subscribe
+import basemod.interfaces.EditRelicsSubscriber
+import basemod.interfaces.EditStringsSubscriber
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer
+import com.megacrit.cardcrawl.localization.PowerStrings
+import com.megacrit.cardcrawl.localization.RelicStrings
 
 @SpireInitializer
-class ZeldaRelics {
+class ZeldaRelics :
+    EditStringsSubscriber,
+    EditRelicsSubscriber
+{
+    override fun receiveEditStrings() {
+            BaseMod.loadCustomStringsFile(PowerStrings::class.java, "zeldaRelics/localization/eng/prodStrings/powers.json")
+            BaseMod.loadCustomStringsFile(RelicStrings::class.java, "zeldaRelics/localization/eng/prodStrings/relics.json")
+    }
+
+    override fun receiveEditRelics() {
+    }
 
     companion object {
         var textureLoader = AssetLoader()

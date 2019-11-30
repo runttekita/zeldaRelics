@@ -127,7 +127,7 @@ class MasterSwordPower(val target: AbstractCreature) : AbstractPower(), Helper {
     object Same : Helper {
         @JvmStatic
         fun Postfix(__instance: ShowCardAndAddToHandEffect, card: AbstractCard) {
-            if (!AddToHandPatch.player.hasPower(MasterSwordPower.POWER_ID)) return
+            if (!player.hasPower(MasterSwordPower.POWER_ID)) return
             if (card.type == CardType.ATTACK && !card.isCostModified && card.cost > 0) {
                 card.modifyCostForCombat(-1)
                 card.isCostModified = true

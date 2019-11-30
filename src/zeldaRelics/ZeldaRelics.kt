@@ -2,12 +2,14 @@ package zeldaRelics
 
 import basemod.BaseMod
 import basemod.BaseMod.subscribe
+import basemod.helpers.RelicType
 import basemod.interfaces.EditRelicsSubscriber
 import basemod.interfaces.EditStringsSubscriber
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.localization.PowerStrings
 import com.megacrit.cardcrawl.localization.RelicStrings
+import zeldaRelics.relics.GreenHat
 
 @SpireInitializer
 class ZeldaRelics :
@@ -23,6 +25,7 @@ class ZeldaRelics :
     }
 
     override fun receiveEditRelics() {
+        BaseMod.addRelic(GreenHat(), RelicType.SHARED)
     }
 
     companion object {

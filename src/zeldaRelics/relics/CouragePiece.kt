@@ -95,7 +95,6 @@ class CouragePiece : AbstractZeldaRelic(id, rarity, landingSound) {
                     break
                 }
             }
-            player.loseRelic(CouragePiece.id)
             val triforce = RelicLibrary.getRelic(CourageTriforce.id).makeCopy()
             triforce.instantObtain(AbstractDungeon.player, relicAtIndex, false)
         }

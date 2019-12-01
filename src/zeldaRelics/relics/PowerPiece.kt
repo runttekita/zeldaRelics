@@ -86,7 +86,6 @@ class PowerPiece : AbstractZeldaRelic(id, rarity, landingSound) {
                     break
                 }
             }
-            player.loseRelic(PowerPiece.id)
             val triforce = RelicLibrary.getRelic(PowerTriforce.id).makeCopy()
             triforce.instantObtain(AbstractDungeon.player, relicAtIndex, false)
         }

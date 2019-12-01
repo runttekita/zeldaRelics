@@ -4,7 +4,7 @@
     <groupId>reinashsl</groupId>
     <artifactId>ZeldaRelics</artifactId>
     <name>Zelda Relics</name>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <description>Zelda relics and stuff</description>
 
     <properties>

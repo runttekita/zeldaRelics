@@ -69,7 +69,6 @@ class GreenTunic : AbstractZeldaRelic(id, rarity, landingSound) {
                     break
                 }
             }
-            player.loseRelic(GreenHat.id)
             instantObtain(player, relicAtIndex, false)
         } else {
             super.obtain()

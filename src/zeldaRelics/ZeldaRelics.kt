@@ -2,9 +2,11 @@ package zeldaRelics
 
 import basemod.BaseMod
 import basemod.BaseMod.subscribe
+import basemod.abstracts.CustomSavable
 import basemod.helpers.RelicType
 import basemod.interfaces.*
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer
+import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.dungeons.Exordium
@@ -13,6 +15,8 @@ import com.megacrit.cardcrawl.localization.PowerStrings
 import com.megacrit.cardcrawl.localization.RelicStrings
 import com.megacrit.cardcrawl.localization.RunModStrings
 import com.megacrit.cardcrawl.screens.custom.CustomMod
+import com.megacrit.cardcrawl.trials.CustomTrial
+import com.megacrit.cardcrawl.vfx.cardManip.CardGlowBorder
 import zeldaRelics.events.TunicMonsterEvent
 import zeldaRelics.modifiers.Hylian
 import zeldaRelics.relics.*
@@ -24,7 +28,8 @@ class ZeldaRelics :
     PostUpdateSubscriber,
     OnPlayerLoseBlockSubscriber,
     AddCustomModeModsSubscriber,
-    PostInitializeSubscriber
+    PostInitializeSubscriber,
+    CustomSavable<Boolean>
 {
     override fun receiveOnPlayerLoseBlock(block: Int): Int {
         if (AbstractDungeon.player.hasRelic(HylianShield.id)) {
@@ -112,6 +117,20 @@ class ZeldaRelics :
 
     override fun receivePostInitialize() {
         BaseMod.addEvent(makeID(TunicMonsterEvent::class.java), TunicMonsterEvent::class.java, Exordium.ID)
+        BaseMod.addSaveField<Boolean>("isHylian",this)
+    }
+
+    override fun onLoad(isHylian: Boolean?) {
+        if (isHylian != null && isHylian) {
+            if (CardCrawlGame.trial == null) {
+                CardCrawlGame.trial = CustomTrial()
+            }
+            CardCrawlGame.trial.dailyModIDs().add(Hylian.id)
+        }
+    }
+
+    override fun onSave(): Boolean? {
+        return CardCrawlGame.trial?.dailyModIDs()?.contains(Hylian.id)
     }
 
 }

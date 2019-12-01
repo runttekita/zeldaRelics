@@ -96,7 +96,7 @@ class WisdomPiece : AbstractZeldaRelic(id, rarity, landingSound) {
             }
             player.loseRelic(WisdomPiece.id)
             val triforce = RelicLibrary.getRelic(WisdomTriforce.id).makeCopy()
-            triforce.instantObtain(AbstractDungeon.player, relicAtIndex, false)
+            triforce.instantObtain(AbstractDungeon.player, relicAtIndex, true)
         }
     }
 

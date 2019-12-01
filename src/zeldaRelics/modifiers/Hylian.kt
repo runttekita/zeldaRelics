@@ -1,5 +1,6 @@
 package zeldaRelics.modifiers
 
+import basemod.abstracts.CustomSavable
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.daily.mods.AbstractDailyMod

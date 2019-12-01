@@ -65,6 +65,7 @@ class TunicMonsterEvent : AbstractImageEvent(name, desc[0], "zeldaRelicsResource
                 }
                 enterCombatFromImage()
                 val blueTunicReward = LinkedRewardItem(RewardItem(RelicLibrary.getRelic(BlueTunic.id).makeCopy()))
+                AbstractDungeon.getCurrRoom().rewards.add(blueTunicReward)
                 val linkedTunics = LinkedRewardItem(blueTunicReward, RelicLibrary.getRelic(RedTunic.id).makeCopy());
                 AbstractDungeon.getCurrRoom().rewards.add(linkedTunics)
             }

@@ -34,6 +34,9 @@ class CouragePiece : AbstractZeldaRelic(id, rarity, landingSound) {
     }
 
     override fun instantObtain() {
+        if (AbstractDungeon.player.hasRelic(CourageTriforce.id)) {
+            RelicLibrary.getRelic(WisdomPiece.id).makeCopy().instantObtain()
+        }
         if (AbstractDungeon.player.hasRelic(CouragePiece.id)) {
             val couragePiece = AbstractDungeon.player.getRelic(CouragePiece.id) as CouragePiece
             couragePiece.increment()
@@ -44,6 +47,9 @@ class CouragePiece : AbstractZeldaRelic(id, rarity, landingSound) {
     }
 
     override fun instantObtain(p: AbstractPlayer, slot: Int, callOnEquip: Boolean) {
+        if (AbstractDungeon.player.hasRelic(CourageTriforce.id)) {
+            RelicLibrary.getRelic(WisdomPiece.id).makeCopy().instantObtain(p, slot, callOnEquip)
+        }
         if (AbstractDungeon.player.hasRelic(CouragePiece.id)) {
             val couragePiece = AbstractDungeon.player.getRelic(CouragePiece.id) as CouragePiece
             couragePiece.increment()
@@ -58,6 +64,9 @@ class CouragePiece : AbstractZeldaRelic(id, rarity, landingSound) {
     }
 
     override fun obtain() {
+        if (AbstractDungeon.player.hasRelic(CourageTriforce.id)) {
+            RelicLibrary.getRelic(WisdomPiece.id).makeCopy().obtain()
+        }
         if (AbstractDungeon.player.hasRelic(CouragePiece.id)) {
             val couragePiece = AbstractDungeon.player.getRelic(CouragePiece.id) as CouragePiece
             couragePiece.increment()

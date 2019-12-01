@@ -7,6 +7,7 @@ import basemod.interfaces.*
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.localization.EventStrings
 import com.megacrit.cardcrawl.localization.PowerStrings
 import com.megacrit.cardcrawl.localization.RelicStrings
 import com.megacrit.cardcrawl.localization.RunModStrings
@@ -40,6 +41,7 @@ class ZeldaRelics :
         BaseMod.loadCustomStringsFile(PowerStrings::class.java, "zeldaRelicsResources/localization/eng/powers.json")
         BaseMod.loadCustomStringsFile(RelicStrings::class.java, "zeldaRelicsResources/localization/eng/relics.json")
         BaseMod.loadCustomStringsFile(RunModStrings::class.java, "zeldaRelicsResources/localization/eng/modifier.json")
+        BaseMod.loadCustomStringsFile(EventStrings::class.java, "zeldaRelicsResources/localization/eng/events.json")
         if (Settings.language != Settings.GameLanguage.ENG) {
             val lang = when (Settings.language) {
                 else -> "eng"
@@ -47,6 +49,7 @@ class ZeldaRelics :
             BaseMod.loadCustomStringsFile(PowerStrings::class.java, "zeldaRelicsResources/localization/$lang/powers.json")
             BaseMod.loadCustomStringsFile(RelicStrings::class.java, "zeldaRelicsResources/localization/$lang/relics.json")
             BaseMod.loadCustomStringsFile(RunModStrings::class.java, "zeldaRelicsResources/localization/$lang/modifier.json")
+            BaseMod.loadCustomStringsFile(EventStrings::class.java, "zeldaRelicsResources/localization/$lang/events.json")
         }
     }
 

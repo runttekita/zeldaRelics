@@ -1,0 +1,14 @@
+{
+  "zeldaRelics:TunicMonsterEvent": {
+    "NAME": "Roar",
+    "DESCRIPTIONS": [
+      "heck",
+      "hecker"
+    ],
+    "OPTIONS": [
+      "[Fight!] #rFight #ra #rPowerful #rCreature. #gGain #ga #gTunic.",
+      "[Flee] #gObtain #ga #gFairy #gIn #ga #gBottle."
+      "[Leave]"
+    ]
+  }
+}

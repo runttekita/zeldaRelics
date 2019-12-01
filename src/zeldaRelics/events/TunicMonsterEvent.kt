@@ -51,7 +51,7 @@ class TunicMonsterEvent : AbstractImageEvent(name, desc[0], "zeldaRelicResources
                         AbstractDungeon.getCurrRoom().rewards.add(RewardItem(PotionHelper.getPotion(FairyPotion.POTION_ID)))
                         AbstractDungeon.combatRewardScreen.open()
                         imageEventText.updateBodyText(desc[1])
-                        imageEventText.updateDialogOption(0, options[3])
+                        imageEventText.updateDialogOption(0, options[2])
                         imageEventText.clearRemainingOptions()
                         screenNum = 2
                     }

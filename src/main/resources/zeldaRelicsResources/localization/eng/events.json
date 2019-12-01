@@ -2,12 +2,12 @@
   "zeldaRelics:TunicMonsterEvent": {
     "NAME": "Roar",
     "DESCRIPTIONS": [
-      "heck",
-      "hecker"
+      "As you turn the corner, you see a #yfairy yelling for help. NL Saying if you slay the monster she will grant you #yGreat #yPower.",
+      "Unfortunately not all can be saved and not all is lost when 1 soul falls. NL You carry onwards to the real threat."
     ],
     "OPTIONS": [
-      "[Fight!] #rFight #ra #rPowerful #rCreature. #gGain #ga #gTunic.",
-      "[Flee] #gObtain #ga #gFairy #gIn #ga #gBottle.",
+      "[Slay] #rFight #ra #rPowerful #rCreature. #gGain #ga #gTunic.",
+      "[Flee]",
       "[Leave]"
     ]
   }

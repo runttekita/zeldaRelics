@@ -19,7 +19,9 @@ import javassist.NotFoundException
 import javassist.expr.ExprEditor
 import javassist.expr.Instanceof
 import zeldaRelics.ZeldaRelics.Companion.makeID
+import zeldaRelics.modifiers.Hylian
 import zeldaRelics.relics.BlueTunic
+import zeldaRelics.relics.HylianShield
 import zeldaRelics.relics.RedTunic
 import zeldaRelics.rewards.LinkedRewardItem
 
@@ -88,6 +90,21 @@ class TunicMonsterEvent : AbstractImageEvent(name, desc[0], "zeldaRelicsResource
                     } catch (e: NotFoundException) {
                         println(e)
                     }
+                }
+            }
+        }
+    }
+
+    @SpirePatch (
+        clz = AbstractDungeon::class,
+        method = "initializeCardPools"
+    )
+    public class OnlyHyliansAllowed {
+        public companion object {
+            @JvmStatic
+            fun Prefix(__instance: AbstractDungeon) {
+                if (CardCrawlGame.trial == null || !CardCrawlGame.trial.dailyModIDs().contains(Hylian.id)) {
+                    AbstractDungeon.eventList.remove(TunicMonsterEvent.id)
                 }
             }
         }

@@ -38,7 +38,6 @@ class Hylian : AbstractDailyMod(id, name, desc, null, true) {
                 removeRelics(AbstractDungeon.bossRelicPool)
                 removeRelics(AbstractDungeon.shopRelicPool)
             }
-            println(AbstractDungeon.commonRelicPool)
         }
 
         fun removeRelics(list: ArrayList<String>) {

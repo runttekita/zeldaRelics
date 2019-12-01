@@ -3,16 +3,15 @@ package zeldaRelics
 import basemod.BaseMod
 import basemod.BaseMod.subscribe
 import basemod.helpers.RelicType
-import basemod.interfaces.EditRelicsSubscriber
-import basemod.interfaces.EditStringsSubscriber
-import basemod.interfaces.OnPlayerLoseBlockSubscriber
-import basemod.interfaces.PostUpdateSubscriber
+import basemod.interfaces.*
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.localization.PowerStrings
 import com.megacrit.cardcrawl.localization.RelicStrings
 import com.megacrit.cardcrawl.localization.RunModStrings
+import com.megacrit.cardcrawl.screens.custom.CustomMod
+import zeldaRelics.modifiers.Hylian
 import zeldaRelics.relics.*
 
 @SpireInitializer
@@ -20,7 +19,8 @@ class ZeldaRelics :
     EditStringsSubscriber,
     EditRelicsSubscriber,
     PostUpdateSubscriber,
-    OnPlayerLoseBlockSubscriber
+    OnPlayerLoseBlockSubscriber,
+    AddCustomModeModsSubscriber
 {
     override fun receiveOnPlayerLoseBlock(block: Int): Int {
         if (AbstractDungeon.player.hasRelic(HylianShield.id)) {
@@ -98,6 +98,10 @@ class ZeldaRelics :
     init {
         subscribe(this)
         setModID("zeldaRelics")
+    }
+
+    override fun receiveCustomModeMods(list: MutableList<CustomMod>?) {
+        list?.add(CustomMod(Hylian.id, "b", true))
     }
 
 }

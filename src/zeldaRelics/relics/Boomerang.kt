@@ -42,9 +42,7 @@ class Boomerang : AbstractZeldaRelic(id, rarity, landingSound) {
                 )
             }
             val rng = AbstractDungeon.relicRng.random(99)
-            println("$rng $surpriseChance")
             if (rng < surpriseChance) {
-                println("???")
                 addToBot(ObtainPotionAction(AbstractDungeon.returnRandomPotion(true)))
             }
         }

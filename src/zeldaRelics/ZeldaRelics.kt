@@ -31,6 +31,7 @@ class ZeldaRelics :
     override fun receivePostUpdate() {
         if (AbstractDungeon.player == null) return
         AbstractDungeon.player.getRelic(CouragePiece.id)?.onTrigger()
+        AbstractDungeon.player.getRelic(WisdomPiece.id)?.onTrigger()
     }
 
     override fun receiveEditStrings() {
@@ -54,6 +55,7 @@ class ZeldaRelics :
         BaseMod.addRelic(Navi(), RelicType.SHARED)
         BaseMod.addRelic(HeroBow(), RelicType.SHARED)
         BaseMod.addRelic(CouragePiece(), RelicType.SHARED)
+        BaseMod.addRelic(WisdomPiece(), RelicType.SHARED)
     }
 
     companion object {

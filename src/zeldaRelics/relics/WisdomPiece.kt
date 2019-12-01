@@ -16,11 +16,11 @@ import com.megacrit.cardcrawl.relics.GoldenIdol
 import javazoom.jl.decoder.LayerIIIDecoder.io
 import javazoom.jl.decoder.LayerIIIDecoder.io
 
-class CouragePiece : AbstractZeldaRelic(id, rarity, landingSound) {
+class WisdomPiece : AbstractZeldaRelic(id, rarity, landingSound) {
     private var hereWeGoAgain = false
 
     companion object {
-        public val id = ZeldaRelics.makeID(CouragePiece::class.java)
+        public val id = ZeldaRelics.makeID(WisdomPiece::class.java)
         private val rarity = AbstractRelic.RelicTier.SPECIAL
         private val landingSound = LandingSound.MAGICAL
     }
@@ -34,20 +34,20 @@ class CouragePiece : AbstractZeldaRelic(id, rarity, landingSound) {
     }
 
     override fun instantObtain() {
-        if (AbstractDungeon.player.hasRelic(CouragePiece.id)) {
-            val couragePiece = AbstractDungeon.player.getRelic(CouragePiece.id) as CouragePiece
-            couragePiece.increment()
-            couragePiece.flash()
+        if (AbstractDungeon.player.hasRelic(WisdomPiece.id)) {
+            val wisdomPiece = AbstractDungeon.player.getRelic(WisdomPiece.id) as WisdomPiece
+            wisdomPiece.increment()
+            wisdomPiece.flash()
         } else {
             super.instantObtain()
         }
     }
 
     override fun instantObtain(p: AbstractPlayer, slot: Int, callOnEquip: Boolean) {
-        if (AbstractDungeon.player.hasRelic(CouragePiece.id)) {
-            val couragePiece = AbstractDungeon.player.getRelic(CouragePiece.id) as CouragePiece
-            couragePiece.increment()
-            couragePiece.flash()
+        if (AbstractDungeon.player.hasRelic(WisdomPiece.id)) {
+            val wisdomPiece = AbstractDungeon.player.getRelic(WisdomPiece.id) as WisdomPiece
+            wisdomPiece.increment()
+            wisdomPiece.flash()
 
             isDone = true
             isObtained = true
@@ -58,10 +58,10 @@ class CouragePiece : AbstractZeldaRelic(id, rarity, landingSound) {
     }
 
     override fun obtain() {
-        if (AbstractDungeon.player.hasRelic(CouragePiece.id)) {
-            val couragePiece = AbstractDungeon.player.getRelic(CouragePiece.id) as CouragePiece
-            couragePiece.increment()
-            couragePiece.flash()
+        if (AbstractDungeon.player.hasRelic(WisdomPiece.id)) {
+            val wisdomPiece = AbstractDungeon.player.getRelic(WisdomPiece.id) as WisdomPiece
+            wisdomPiece.increment()
+            wisdomPiece.flash()
         } else {
             super.obtain()
         }
@@ -81,13 +81,13 @@ class CouragePiece : AbstractZeldaRelic(id, rarity, landingSound) {
         if (hereWeGoAgain) {
             var relicAtIndex = 0
             for (i in AbstractDungeon.player.relics.indices) {
-                if ((AbstractDungeon.player.relics[i] as AbstractRelic).relicId == CouragePiece.id) {
+                if ((AbstractDungeon.player.relics[i] as AbstractRelic).relicId == WisdomPiece.id) {
                     relicAtIndex = i
                     break
                 }
             }
-            player.loseRelic(CouragePiece.id)
-            val triforce = RelicLibrary.getRelic(CourageTriforce.id).makeCopy()
+            player.loseRelic(WisdomPiece.id)
+            val triforce = RelicLibrary.getRelic(WisdomTriforce.id).makeCopy()
             triforce.instantObtain(AbstractDungeon.player, relicAtIndex, false)
         }
     }

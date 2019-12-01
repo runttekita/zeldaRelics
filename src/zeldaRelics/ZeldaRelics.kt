@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings
 import com.megacrit.cardcrawl.localization.RelicStrings
 import com.megacrit.cardcrawl.localization.RunModStrings
 import com.megacrit.cardcrawl.screens.custom.CustomMod
+import zeldaRelics.events.TunicMonsterEvent
 import zeldaRelics.modifiers.Hylian
 import zeldaRelics.relics.*
 
@@ -21,7 +22,8 @@ class ZeldaRelics :
     EditRelicsSubscriber,
     PostUpdateSubscriber,
     OnPlayerLoseBlockSubscriber,
-    AddCustomModeModsSubscriber
+    AddCustomModeModsSubscriber,
+    PostInitializeSubscriber
 {
     override fun receiveOnPlayerLoseBlock(block: Int): Int {
         if (AbstractDungeon.player.hasRelic(HylianShield.id)) {
@@ -105,6 +107,10 @@ class ZeldaRelics :
 
     override fun receiveCustomModeMods(list: MutableList<CustomMod>?) {
         list?.add(CustomMod(Hylian.id, "b", true))
+    }
+
+    override fun receivePostInitialize() {
+        BaseMod.addEvent(makeID(TunicMonsterEvent::class.java), TunicMonsterEvent::class.java)
     }
 
 }

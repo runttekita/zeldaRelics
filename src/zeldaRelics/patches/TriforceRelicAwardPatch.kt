@@ -1,10 +1,12 @@
 package zeldaRelics.patches
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch
+import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.helpers.RelicLibrary
 import com.megacrit.cardcrawl.relics.AbstractRelic
 import com.megacrit.cardcrawl.rewards.RewardItem
 import zeldaRelics.helpers.Helper
+import zeldaRelics.modifiers.Hylian
 import zeldaRelics.relics.*
 
 @SpirePatch(
@@ -18,6 +20,7 @@ class TriforceRelicAwardPatch {
     companion object : Helper {
         @JvmStatic
         fun Postfix(__instance: RewardItem, relic: AbstractRelic) {
+            if (CardCrawlGame.trial == null || !CardCrawlGame.trial.dailyModIDs().contains(Hylian.id)) return
             if (!player.hasRelic(CourageTriforce.id)) {
                 val piece = RelicLibrary.getRelic(CouragePiece.id).makeCopy()
                 __instance.relic = piece

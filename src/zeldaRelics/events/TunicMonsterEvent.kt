@@ -35,8 +35,8 @@ class TunicMonsterEvent : AbstractImageEvent(name, desc[0], "zeldaRelicsResource
     }
 
     init  {
-        imageEventText.setDialogOption(OPTIONS[0])
-        imageEventText.setDialogOption(OPTIONS[1])
+        imageEventText.setDialogOption(options[0])
+        imageEventText.setDialogOption(options[1])
     }
 
     override fun buttonEffect(i: Int) {

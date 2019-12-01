@@ -7,6 +7,7 @@ import basemod.interfaces.*
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.dungeons.Exordium
 import com.megacrit.cardcrawl.localization.EventStrings
 import com.megacrit.cardcrawl.localization.PowerStrings
 import com.megacrit.cardcrawl.localization.RelicStrings
@@ -110,7 +111,7 @@ class ZeldaRelics :
     }
 
     override fun receivePostInitialize() {
-        BaseMod.addEvent(makeID(TunicMonsterEvent::class.java), TunicMonsterEvent::class.java)
+        BaseMod.addEvent(makeID(TunicMonsterEvent::class.java), TunicMonsterEvent::class.java, Exordium.ID)
     }
 
 }

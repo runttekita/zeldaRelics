@@ -19,15 +19,21 @@ class TriforceRelicAwardPatch {
         @JvmStatic
         fun Postfix(__instance: RewardItem, relic: AbstractRelic) {
             if (!player.hasRelic(CourageTriforce.id)) {
-                __instance.relic = RelicLibrary.getRelic(CouragePiece.id).makeCopy()
+                val piece = RelicLibrary.getRelic(CouragePiece.id).makeCopy()
+                __instance.relic = piece
+                __instance.text =  piece.name
                 return
             }
             if (!player.hasRelic(WisdomTriforce.id)) {
-                __instance.relic = RelicLibrary.getRelic(WisdomPiece.id).makeCopy()
+                val piece = RelicLibrary.getRelic(WisdomPiece.id).makeCopy()
+                __instance.relic = piece
+                __instance.text =  piece.name
                 return
             }
             if (!player.hasRelic(PowerTriforce.id)) {
-                __instance.relic = RelicLibrary.getRelic(PowerPiece.id).makeCopy()
+                val piece = RelicLibrary.getRelic(PowerPiece.id).makeCopy()
+                __instance.relic = piece
+                __instance.text =  piece.name
                 return
             }
         }

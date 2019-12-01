@@ -54,7 +54,6 @@ class WisdomPiece : AbstractZeldaRelic(id, rarity, landingSound) {
             val wisdomPiece = AbstractDungeon.player.getRelic(WisdomPiece.id) as WisdomPiece
             wisdomPiece.increment()
             wisdomPiece.flash()
-
             isDone = true
             isObtained = true
             discarded = true

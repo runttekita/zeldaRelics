@@ -7,6 +7,14 @@
     ],
     "FLAVOR": "A hat that has been with you through everything, simply wearing it makes you stronger."
   },
+  "zeldaRelics:GreenTunic": {
+    "NAME": "Green Hat",
+    "DESCRIPTIONS": [
+      "Whenever you climb a floor, gain #b",
+      " HP."
+    ],
+    "FLAVOR": "Those who wear this carry a great destiny."
+  },
   "zeldaRelics:RedTunic": {
     "NAME": "Red Tunic",
     "DESCRIPTIONS": [

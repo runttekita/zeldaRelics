@@ -58,6 +58,7 @@ class ZeldaRelics :
         BaseMod.addRelic(CouragePiece(), RelicType.SHARED)
         BaseMod.addRelic(WisdomPiece(), RelicType.SHARED)
         BaseMod.addRelic(PowerPiece(), RelicType.SHARED)
+        BaseMod.addRelic(GreenTunic(), RelicType.SHARED)
     }
 
     companion object {

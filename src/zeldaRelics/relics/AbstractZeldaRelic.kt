@@ -17,5 +17,5 @@ open class AbstractZeldaRelic(id: String, tier: AbstractRelic.RelicTier, sfx: Ab
 
 private fun getTexture(id: String): Texture {
     val imgName = id.substring(id.indexOf(":") + 1).trim { it <= ' ' }
-    return textureLoader.getTexture(imgName)
+    return textureLoader.getTexture("zeldaRelicsResources/images/relics/${imgName}.png")
 }

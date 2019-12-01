@@ -48,7 +48,7 @@ class Hylian : AbstractDailyMod(id, name, desc, null, true) {
                 }
             }
             for (relic in relicsToRemove) {
-                AbstractDungeon.commonRelicPool.remove(relic)
+                list.remove(relic)
             }
             relicsToRemove.clear()
         }

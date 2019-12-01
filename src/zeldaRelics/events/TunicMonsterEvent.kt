@@ -22,7 +22,7 @@ import zeldaRelics.relics.RedTunic
 import zeldaRelics.rewards.LinkedRewardItem
 
 
-class TunicMonsterEvent : AbstractImageEvent(name, desc[0], "zeldaRelicResources/images/events/tunicMonster.png") {
+class TunicMonsterEvent : AbstractImageEvent(name, desc[0], "zeldaRelicsResources/images/events/tunicMonster.png") {
 
     companion object {
         val id = makeID(TunicMonsterEvent::class.java)

@@ -74,7 +74,7 @@ class ZeldaRelics :
         BaseMod.addRelic(CourageTriforce(), RelicType.SHARED)
         BaseMod.addRelic(PowerTriforce(), RelicType.SHARED)
         BaseMod.addRelic(Navi(), RelicType.SHARED)
-        BaseMod.addRelic(HeroBow(), RelicType.SHARED)
+        //BaseMod.addRelic(HeroBow(), RelicType.SHARED)
         BaseMod.addRelic(CouragePiece(), RelicType.SHARED)
         BaseMod.addRelic(WisdomPiece(), RelicType.SHARED)
         BaseMod.addRelic(PowerPiece(), RelicType.SHARED)

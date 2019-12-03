@@ -3,9 +3,20 @@
 
     <groupId>reinashsl</groupId>
     <artifactId>ZeldaRelics</artifactId>
-    <name>Zelda Relics</name>
-    <version>0.0.4</version>
-    <description>Zelda relics and stuff</description>
+    <name>Hyrulean Relics</name>
+    <version>0.0.5</version>
+    <description>This mod adds in a new custom daily modifier that adds in new Legend of Zelda inspired relics!
+        Elites and chests now drop Triforce pieces you can collect to assemble more powerful relics and you can collect other various items seen in the Zelda series.
+        If you would like to leave a comment or feedback please do so!
+
+        ---------------------------------------------
+
+        This mod is a commission!
+        If you want to commission your own mod, leave a comment or email reinashsl@gmail.com!
+
+        Or if you just like my content please consider donating to me! I appreciate everything.
+        https://ko-fi.com/velvet_halation
+    </description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

@@ -5,7 +5,9 @@ import basemod.BaseMod.subscribe
 import basemod.abstracts.CustomSavable
 import basemod.helpers.RelicType
 import basemod.interfaces.*
+import com.evacipated.cardcrawl.modthespire.lib.SpireEnum
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer
+import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
@@ -131,6 +133,47 @@ class ZeldaRelics :
 
     override fun onSave(): Boolean? {
         return CardCrawlGame.trial?.dailyModIDs()?.contains(Hylian.id)
+    }
+
+    /**
+     * Idea taken from Alchyr
+     * ASCII Art made from
+     * https://asciiart.club/
+     */
+    object ASCII_ART {
+
+        @SpireEnum
+        @JvmStatic
+        var shamelessSelfPlug: AbstractCard.CardTags? = null
+
+        init {
+            init()
+        }
+
+        private fun init() {
+            println("   \n" +
+                    "                                           ▄\n" +
+                    "       ,                                  ███▄\n" +
+                    "        ███▄▄╓                          ╓█████▄                           ,▄▄███\n" +
+                    "        ▐████████▄▄;            ,▄     ▄████████      ▄             ,▄▄████████`\n" +
+                    "         ██████████████▄▄,     ▄█     █▀▀▀▀▀▀▀▀▀▀▄    ▐█,      ▄▄▄████████████▌\n" +
+                    "         ╙███████████████████▄██▌   ╓███┐      ▄███    ██▄▄▄██████████████████\n" +
+                    "                  `└\"▀▀▀▀▀▀▀████⌐  ▄█████▄   ▄██████p  ╫██████▀▀▀▀▀▀▀╙└└\n" +
+                    "                             ███▌ █████████▄█████████▄ ███▌\n" +
+                    "            Φ▄███████████████████p                    ▄███████████████▄▄▄▄▄⌐\n" +
+                    "             ██████████████▀▀▀█████▄       ╓▄       ▄█████▀▀██████████████▌\n" +
+                    "              ████████▀▀`   ▄▄████████▄   ▄██▄  ,▄████████▄   `▀▀████████▌\n" +
+                    "               ▀▀▀\"      ▄▄████▀▀███████ ▄████▄j███████▀█████▄      \"▀▀█▌\n" +
+                    "                      ▄▄█████▀  ▄███▀▀└ ███████▄`▀▀████  ▀██████▄\n" +
+                    "                   .▄██████▀   ▄████  .█████████▌  ▐████   ▀███████▄\n" +
+                    "                     \"▀██▀    ▄████▌    ▀█████▀└    █████    ╙███▀╙\n" +
+                    "                             ▄█████  ╓██µ ███  ██▄  ▐█████\n" +
+                    "                                  ` ╓███ ▐████ ▀██▌  ╙└'\n" +
+                    "                             ▄▄▄▄▄▄▄███  ▐████  ▄███▄▄▄▄▄▄,\n" +
+                    "                             ▀███▌▀▀▀█▀^  ███⌐  ▀██▀▀▀███▀ This mod was a commission!\n" +
+                    "                                ▀█        └█▌        ▐▀^   If you want to commission a mod too,\n" +
+                    "                                           ╙               Leave a comment or email reinashsl@gmail.com!")
+        }
     }
 
 }
